@@ -10,10 +10,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all(); // Fetch all users
+        // $users = User::all(); // Fetch all users
 
-        // Pass users data to the Blade view
-        return view('users', compact('users'));
+        // // Pass users data to the Blade view
+        // return view('users', compact('users'));
+        return User::all();
     }
 
     public function store(Request $request)
