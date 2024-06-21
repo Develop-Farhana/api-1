@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\API\MailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
@@ -20,3 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('users', UserController::class);
+Route::post('users/upload', [UserController::class, 'upload']);
+Route::post('send-mail', [MailController::class, 'send']);
+
+
+
